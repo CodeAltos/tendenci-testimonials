@@ -14,8 +14,8 @@ from tendenci.core.perms.models import TendenciBaseModel
 from addons.testimonials.managers import TestimonialManager
 
 class Testimonial(TendenciBaseModel):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50, blank=True, null=True)
+    last_name = models.CharField(max_length=50, blank=True, null=True)
     city = models.CharField(max_length=50, blank=True, null=True)
     state = models.CharField(max_length=25, blank=True, null=True)
     country = models.CharField(max_length=50, blank=True, null=True)
