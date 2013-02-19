@@ -3,6 +3,7 @@ from django.utils.text import truncate_words
 from django.utils.html import strip_tags
 from django.core.urlresolvers import reverse
 
+from tendenci.core.event_logs.models import EventLog
 from tendenci.core.perms.admin import TendenciBaseModelAdmin
 from addons.testimonials.models import Testimonial
 from addons.testimonials.forms import TestimonialForm
@@ -72,6 +73,7 @@ class TestimonialAdmin(TendenciBaseModelAdmin):
         }
         if not change:
             log_defaults['action'] = "add"
+            EventLog.objects.log(**log_defaults)
 
         return object
 

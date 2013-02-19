@@ -68,6 +68,3 @@ class TestimonialForm(TendenciBaseForm):
         if self.cleaned_data.get('remove_photo'):
             test.image = None
         return testimonial
-
-class UploadStoryImageForm(forms.Form):
-    file  = forms.FileField(label=("File Path"))

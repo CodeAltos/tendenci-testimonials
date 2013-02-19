@@ -14,14 +14,14 @@ from tendenci.core.perms.models import TendenciBaseModel
 from addons.testimonials.managers import TestimonialManager
 
 class Testimonial(TendenciBaseModel):
-    first_name = models.CharField(max_length=50, blank=True, null=True)
-    last_name = models.CharField(max_length=50, blank=True, null=True)
-    city = models.CharField(max_length=50, blank=True, null=True)
-    state = models.CharField(max_length=25, blank=True, null=True)
-    country = models.CharField(max_length=50, blank=True, null=True)
-    email = models.EmailField(max_length=75, blank=True, null=True)
-    company = models.CharField(max_length=75, blank=True, null=True)
-    title = models.CharField(max_length=50, blank=True, null=True)
+    first_name = models.CharField(max_length=50, blank=True, default="")
+    last_name = models.CharField(max_length=50, blank=True, default="")
+    city = models.CharField(max_length=50, blank=True, default="")
+    state = models.CharField(max_length=25, blank=True, default="")
+    country = models.CharField(max_length=50, blank=True, default="")
+    email = models.EmailField(max_length=75, blank=True, default="")
+    company = models.CharField(max_length=75, blank=True, default="")
+    title = models.CharField(max_length=50, blank=True, default="")
     website = models.URLField(max_length=255, blank=True, null=True)
     testimonial = models.TextField(help_text=_('Supports &lt;strong&gt;, &lt;em&gt;, and &lt;a&gt; HTML tags.'))
     image = models.ForeignKey('TestimonialPhoto',
