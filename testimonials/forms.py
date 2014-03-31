@@ -66,5 +66,6 @@ class TestimonialForm(TendenciBaseForm):
     def save(self, *args, **kwargs):
         testimonial = super(TestimonialForm, self).save(*args, **kwargs)
         if self.cleaned_data.get('remove_photo'):
-            test.image = None
+            testimonial.image = None
+            testimonial.save()
         return testimonial
