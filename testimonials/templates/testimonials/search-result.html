@@ -6,7 +6,7 @@
         </div>
         <p class="tsm-search-item-desc">
             {% filter truncatewords:"20" %}
-            {{ testimonial.testimonial|striptags }}
+            {{ testimonial.testimonial|striptags|safe }}
             {% endfilter %}
         </p>
 
