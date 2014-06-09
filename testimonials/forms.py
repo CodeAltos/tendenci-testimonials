@@ -1,6 +1,7 @@
 import imghdr
 from os.path import splitext, basename
 from django import forms
+from tinymce.widgets import TinyMCE
 
 from tendenci.core.perms.forms import TendenciBaseForm
 from addons.testimonials.models import Testimonial
@@ -16,6 +17,16 @@ class TestimonialForm(TendenciBaseForm):
     status_detail = forms.ChoiceField(choices=(('active','Active'),('inactive','Inactive')))
     photo_upload = forms.FileField(label=('Photo'), required=False)
     remove_photo = forms.BooleanField(label=('Remove the current photo'), required=False)
+
+    new_mce_attrs = {
+        'plugins': "paste",
+        'theme_advanced_buttons1': "bold,italic,|,link,unlink,|,pastetext,|,undo,redo",
+        'theme_advanced_buttons2': "",
+        'theme_advanced_buttons3': "",
+    }
+    testimonial = forms.CharField(
+        widget=TinyMCE(attrs={'style':'width:100%'},
+                       mce_attrs=new_mce_attrs))
 
     class Meta:
         model = Testimonial

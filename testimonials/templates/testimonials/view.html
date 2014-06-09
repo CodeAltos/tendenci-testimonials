@@ -44,7 +44,7 @@
             {{ testimonial.first_name }}&nbsp;{{ testimonial.last_name }} Testimonial
         </h1>
         <span class="tsm-quotation">&ldquo;</span>
-        <p class="tsm-testimonial">{{ testimonial.testimonial|safe }}</p>
+        <div class="tsm-testimonial">{{ testimonial.testimonial|safe }}</div>
         <p class="tsm-person-info">
             {% if testimonial.email %}
                 {{  testimonial.email|obfuscate_email:testimonial.first_last_name }}
