@@ -9,10 +9,10 @@
 {% block extra_head %}
 {{ block.super }}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/testimonial.css">
-<link rel="alternate" type="application/rss+xml" title="Latest Testimonials" href="{% url testimonial.feed %}" />
+<link rel="alternate" type="application/rss+xml" title="Latest Testimonials" href="{% url 'testimonial.feed' %}" />
 {% endblock %}
 
-{% block body %}
+{% block content %}
 {% autopaginate testimonials 5 %}
 {% has_perm user testimonials.add_testimonial as can_add_testimonial %}
 
@@ -21,7 +21,7 @@
 
     {% testimonial_search %}
     {% if can_add_testimonial %}
-    <div><a href="{% url admin:testimonials_testimonial_add %}">Add Testimonial</a></div>
+    <div><a href="{% url 'admin:testimonials_testimonial_add' %}">Add Testimonial</a></div>
     {% endif %}
     <div class="tsm-search-wrap">
         {% for testimonial in testimonials %}
@@ -32,7 +32,7 @@
     </div>
     {% paginate %}
 </div>
-{% endblock body %}
+{% endblock %}
 
 {% block extra_body %}
 {{ block.super }}

@@ -1,6 +1,6 @@
-from tendenci.core.registry import site
-from tendenci.core.registry.base import AppRegistry, lazy_reverse
-from addons.testimonials.models import Testimonial
+from tendenci.apps.registry import site
+from tendenci.apps.registry.base import AppRegistry, lazy_reverse
+from .models import Testimonial
 
 
 class TestimonialRegistry(AppRegistry):

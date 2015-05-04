@@ -1,8 +1,8 @@
 from haystack import indexes
 from haystack import site
 
-from addons.testimonials.models import Testimonial
-from tendenci.core.perms.indexes import TendenciBaseSearchIndex
+from .models import Testimonial
+from tendenci.apps.perms.indexes import TendenciBaseSearchIndex
 
 class TestimonialIndex(TendenciBaseSearchIndex):
     first_name = indexes.CharField(model_attr='first_name')

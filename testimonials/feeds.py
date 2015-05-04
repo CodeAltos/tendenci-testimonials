@@ -1,9 +1,9 @@
-from tendenci.core.rss.feedsmanager import SubFeed
-from tendenci.core.site_settings.utils import get_setting
-from tendenci.core.perms.utils import PUBLIC_FILTER
-from tendenci.core.sitemaps import TendenciSitemap
+from tendenci.apps.rss.feedsmanager import SubFeed
+from tendenci.apps.site_settings.utils import get_setting
+from tendenci.apps.perms.utils import PUBLIC_FILTER
+from tendenci.apps.sitemaps import TendenciSitemap
 
-from addons.testimonials.models import Testimonial
+from .models import Testimonial
 
 class LatestEntriesFeed(SubFeed):
     title =  '%s Latest Testimonials' % get_setting('site','global','sitedisplayname')

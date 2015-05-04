@@ -7,11 +7,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 
-from tendenci.core.perms.object_perms import ObjectPermission
-from tendenci.core.files.models import File, file_directory
+from tendenci.apps.perms.object_perms import ObjectPermission
+from tendenci.apps.files.models import File, file_directory
 from tagging.fields import TagField
-from tendenci.core.perms.models import TendenciBaseModel
-from addons.testimonials.managers import TestimonialManager
+from tendenci.apps.perms.models import TendenciBaseModel
+from .managers import TestimonialManager
 
 class Testimonial(TendenciBaseModel):
     first_name = models.CharField(max_length=50, blank=True, default="")

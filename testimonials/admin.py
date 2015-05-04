@@ -1,14 +1,14 @@
 from django.contrib import admin
-from django.utils.text import truncate_words
+from django.template.defaultfilters import truncatewords as truncate_words
 from django.utils.html import strip_tags
 from django.core.urlresolvers import reverse
 
-from tendenci.core.event_logs.models import EventLog
-from tendenci.core.perms.admin import TendenciBaseModelAdmin
-from addons.testimonials.models import Testimonial
-from addons.testimonials.forms import TestimonialForm
-from tendenci.core.event_logs.models import EventLog
-from tendenci.core.perms.utils import update_perms_and_save
+from tendenci.apps.event_logs.models import EventLog
+from tendenci.apps.perms.admin import TendenciBaseModelAdmin
+from .models import Testimonial
+from .forms import TestimonialForm
+from tendenci.apps.event_logs.models import EventLog
+from tendenci.apps.perms.utils import update_perms_and_save
 
 
 class TestimonialAdmin(TendenciBaseModelAdmin):

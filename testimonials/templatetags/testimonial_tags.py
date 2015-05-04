@@ -1,8 +1,8 @@
 from django.template import Node, Library, TemplateSyntaxError, Variable
 from django.contrib.auth.models import AnonymousUser
 
-from tendenci.core.base.template_tags import ListNode, parse_tag_kwargs
-from addons.testimonials.models import Testimonial
+from tendenci.apps.base.template_tags import ListNode, parse_tag_kwargs
+from ..models import Testimonial
 
 register = Library()
 

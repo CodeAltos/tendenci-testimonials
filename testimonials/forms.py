@@ -3,8 +3,8 @@ from os.path import splitext, basename
 from django import forms
 from tinymce.widgets import TinyMCE
 
-from tendenci.core.perms.forms import TendenciBaseForm
-from addons.testimonials.models import Testimonial
+from tendenci.apps.perms.forms import TendenciBaseForm
+from .models import Testimonial
 
 ALLOWED_LOGO_EXT = (
     '.jpg',

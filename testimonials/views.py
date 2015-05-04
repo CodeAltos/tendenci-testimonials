@@ -3,12 +3,12 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.core.urlresolvers import reverse
 
-from tendenci.core.base.http import Http403
-from tendenci.core.event_logs.models import EventLog
-from tendenci.core.site_settings.utils import get_setting
-from tendenci.core.perms.utils import has_perm, has_view_perm, get_query_filters
+from tendenci.apps.base.http import Http403
+from tendenci.apps.event_logs.models import EventLog
+from tendenci.apps.site_settings.utils import get_setting
+from tendenci.apps.perms.utils import has_perm, has_view_perm, get_query_filters
 
-from addons.testimonials.models import Testimonial
+from .models import Testimonial
 
 def details(request, pk=None, template_name="testimonials/view.html"):
     if not pk: return HttpResponseRedirect(reverse('testimonials'))
