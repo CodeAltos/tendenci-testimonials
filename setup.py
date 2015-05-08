@@ -9,7 +9,7 @@ setup(
     name='tendenci-testimonials',
     author='Tendenci',
     author_email='programmers@tendenci.com',
-    version='1.0.0',
+    version='6.0.0',
     license='GPL3',
     description='Testimonials app for Tendenci',
     long_description=longdesc,
