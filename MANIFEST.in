@@ -1,0 +1,4 @@
+include README.md
+include testimonials/settings.json
+recursive-include testimonials/static *
+recursive-include testimonials/templates *
