@@ -1,11 +1,13 @@
 from haystack import indexes
-from haystack import site
 
 from .models import Testimonial
 from tendenci.apps.perms.indexes import TendenciBaseSearchIndex
 
-class TestimonialIndex(TendenciBaseSearchIndex):
+class TestimonialIndex(TendenciBaseSearchIndex, indexes.Indexable):
     first_name = indexes.CharField(model_attr='first_name')
     last_name = indexes.CharField(model_attr='last_name')
+    
+    @classmethod
+    def get_model(self):
+        return Testimonial
 
-site.register(Testimonial, TestimonialIndex)
