@@ -26,7 +26,7 @@ class TestimonialForm(TendenciBaseForm):
     }
     testimonial = forms.CharField(
         widget=TinyMCE(attrs={'style':'width:100%'},
-                       mce_attrs=new_mce_attrs))
+                       mce_attrs=new_mce_attrs), required=False)
 
     class Meta:
         model = Testimonial
