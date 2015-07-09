@@ -9,7 +9,7 @@ setup(
     name='tendenci-testimonials',
     author='Tendenci',
     author_email='programmers@tendenci.com',
-    version='6.0.1',
+    version='7.0.0',
     license='GPL3',
     description='Testimonials app for Tendenci',
     long_description=longdesc,
@@ -27,5 +27,5 @@ setup(
     ],
     include_package_data=True,
     packages=find_packages(),
-    install_requires=['tendenci>=6.0,<7.0'],
+    install_requires=['tendenci>=7.0,<6.0'],
 )
