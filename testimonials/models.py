@@ -4,7 +4,7 @@ from parse_uri import ParseUri
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.contenttypes.models import ContentType
 
 from tendenci.apps.perms.object_perms import ObjectPermission
@@ -28,7 +28,7 @@ class Testimonial(TendenciBaseModel):
         help_text=_('Photo for this testimonial.'), null=True, default=None)
     tags = TagField(blank=True, help_text=_('Tags separated by commas. E.g Tag1, Tag2, Tag3'))
 
-    perms = generic.GenericRelation(ObjectPermission,
+    perms = GenericRelation(ObjectPermission,
                                           object_id_field="object_id",
                                           content_type_field="content_type")
 
