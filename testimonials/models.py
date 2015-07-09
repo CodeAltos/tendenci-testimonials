@@ -74,10 +74,12 @@ class Testimonial(TendenciBaseModel):
         permissions = (("view_testimonial","Can view testimonial"),)
         verbose_name = 'Testimonial'
         verbose_name_plural = 'Testimonials'
+        app_label = 'testimonials'
 
     @models.permalink
     def get_absolute_url(self):
         return ("testimonial.view", [self.pk])
 
 class TestimonialPhoto(File):
-    pass
+    class Meta:
+        app_label = 'testimonials'
