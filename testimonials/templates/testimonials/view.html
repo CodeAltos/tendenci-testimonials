@@ -45,6 +45,11 @@
         </h1>
         <span class="tsm-quotation">&ldquo;</span>
         <div class="tsm-testimonial">{{ testimonial.testimonial|safe }}</div>
+        {% if testimonial.photo %}
+        <p>
+            <img src="{% url 'file' testimonial.image.pk %}" alt="{{ testimonial.first_last_name }}" title="{{ testimonial.first_last_name }}">
+        </p>
+        {% endif %}
         <p class="tsm-person-info">
             {% if testimonial.email %}
                 {{  testimonial.email|obfuscate_email:testimonial.first_last_name }}
